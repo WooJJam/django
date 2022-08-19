@@ -1,11 +1,18 @@
 <!DOCTPYE html>
 <html lang="en">
-<head>
-    <meta charest="UTF-8">
-    <title>Title</title>
-</head>
+
+{%include 'head.html' %}
+
 <body>
-    Hello World!
+    
+    {%include 'header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {%include 'footer.html' %}
+
 </body>
+
 </html>
 
