@@ -4,7 +4,21 @@
 
     <div style="height: 10rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
         <h1>
-            <testing>
+            testing
+        </h1>
+
+        <form action ="/account/hello_world/" method="post">
+            {% csrf_token %} <!--반드시 써줘야함-->
+            <input type="submit" value="POST">
+        </form>
+
+        <form action ="/account/hello_world/" method="get">
+            {% csrf_token %} <!--반드시 써줘야함-->
+            <input type="submit" value="GET">
+        </form>
+
+        <h1>
+            {{ text }}
         </h1>
 
     </div>
