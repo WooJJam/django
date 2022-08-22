@@ -2,24 +2,26 @@
 
 {% block content %}
 
-    <div style="height: 10rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
-        <h1>
-            testing
+    <div style="border-radius: 1rem; margin: 2rem; text-align: center;">
+        <h1 style="font-family: 'Rubik Burned', cursive;">
+            Hello World LIST!
         </h1>
 
         <form action ="/account/hello_world/" method="post">
             {% csrf_token %} <!--반드시 써줘야함-->
+            <div>
+                <input type="text" name="hello_world_input">
+            </div>
+            <div>
             <input type="submit" value="POST">
+            </div>
         </form>
 
-        <form action ="/account/hello_world/" method="get">
-            {% csrf_token %} <!--반드시 써줘야함-->
-            <input type="submit" value="GET">
-        </form>
-
+        {% if hello_world_output %}
         <h1>
-            {{ text }}
+            {{ hello_world_output.text }}
         </h1>
+        {%endif %}
 
     </div>
 
