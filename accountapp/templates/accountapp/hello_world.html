@@ -4,22 +4,22 @@
 
     <div style="border-radius: 1rem; margin: 2rem; text-align: center;">
         <h1 style="font-family: 'Rubik Burned', cursive;">
-            Hello World LIST!
+            무엇이든 입력하세요!
         </h1>
 
         <form action ="/account/hello_world/" method="post">
             {% csrf_token %} <!--반드시 써줘야함-->
             <div>
-                <input type="text" name="hello_world_input">
+                <input type="text" name="text_input">
             </div>
             <div>
-            <input type="submit" value="POST">
+            <input type="submit" value="등록">
             </div>
         </form>
 
-        {% if hello_world_output %}
+        {% if text_output %}
         <h1>
-            {{ hello_world_output.text }}
+            {{ text_output.text }}
         </h1>
         {%endif %}
 
