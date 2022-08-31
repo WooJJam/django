@@ -14,6 +14,8 @@ from pathlib import Path
 import environ
 import os
 
+from django.urls import reverse_lazy
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -50,7 +52,8 @@ INSTALLED_APPS = [ # 사용할 앱을 여기다 써줘야함
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accountapp' # 새로 설치된 앱을 정확하게 표시함으로서 사용할 수 있게 됨
+    'bootstrap4',
+    'accountapp', # 새로 설치된 앱을 정확하게 표시함으로서 사용할 수 있게 됨
 ]
 
 MIDDLEWARE = [
@@ -142,3 +145,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
