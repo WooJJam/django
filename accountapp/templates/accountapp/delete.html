@@ -7,7 +7,7 @@
     <div style = "mb-4">
         <h4>Delete</h4>
     </div>
-    <form action="{% url 'accountapp:delete' pk=user.pk %}" method="post">
+    <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
     {% csrf_token %}
 
         {% bootstrap_form form %}

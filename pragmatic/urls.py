@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('account/', include('accountapp.urls')), # include를 사용하면 나중에 만들 account 내부에 urls를 참고하여 다시 분기
+    path('accounts/', include('accountapp.urls')), # include를 사용하면 나중에 만들 account 내부에 urls를 참고하여 다시 분기
     path('admin/', admin.site.urls),
 ]

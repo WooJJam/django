@@ -1,6 +1,6 @@
 <div class = "pragmatic_header">
     <div>
-        <h1 class="pragmatic_header_logo">Pragmatic</h1>
+        <a href="{% url 'accountapp:hello_world' %}"><h1 class="pragmatic_header_logo">Pragmatic</h1></a>
     </div>
     <div>
         {% if not user.is_authenticated %}
@@ -8,13 +8,13 @@
             <span>SignUp</span>
         </a>
 
-        <a href="{% url 'accountapp:login' %}?next={{request.path}}">
+        <a href="{% url 'accountapp:login' %}?next={% url 'accountapp:hello_world' %}">
             <span>Login</span>
         </a>
 
         {% else %}
 
-         <a href="{% url 'accountapp:logout' %}?next={{request.path}}">
+         <a href="{% url 'accountapp:logout' %}?next={% url 'accountapp:login' %}">
             <span>Logout</span>
         </a>
 
