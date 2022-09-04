@@ -54,6 +54,7 @@ INSTALLED_APPS = [ # 사용할 앱을 여기다 써줘야함
     'django.contrib.staticfiles',
     'bootstrap4',
     'accountapp', # 새로 설치된 앱을 정확하게 표시함으로서 사용할 수 있게 됨
+    'profileapp',
 ]
 
 MIDDLEWARE = [
